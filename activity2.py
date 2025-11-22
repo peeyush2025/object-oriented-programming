@@ -1,7 +1,22 @@
-class vehicle:
-    def __init__(self, max_speed, milage):
-        self.max_speed = max_speed
-        self.milage = milage
-modelx=vehicle(240,18)
-print("model max speed :",modelx.max_speed)
-print("model milage :",modelx.milage)
+import random
+class FruitQuiz:
+	def __init__(self):
+		self.fruits={'apple':'red',
+					'orange':'orange',
+					'watermelon':'green',
+					'banana':'yellow'}
+	def quiz(self):
+		while (True):
+			fruit,color=random.choice(list(self.fruits.items()))
+			print("what is the colr of {}".format(fruit))
+			user_answer=input()
+			if user_answer.lower()==color:
+				print("correct")
+			else:
+				print("wrong answer")
+			option=int(input("enter0,if you want to play again otherwise enter 1:"))
+			if (option):
+				break
+print("welcome to fruit quiz")
+fq = FruitQuiz()
+fq.quiz()
